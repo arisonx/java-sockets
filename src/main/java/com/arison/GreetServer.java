@@ -32,12 +32,12 @@ public class GreetServer {
     public void stop() throws IOException {
         // server, input, output and client server stop
         in.close();
-        if (serverSocket.isClosed()) {
-            System.out.println("Server closed!");
-        }
         out.close();
         clientSocket.close();
         serverSocket.close();
+        if (serverSocket.isClosed()) {
+            System.out.println("Server closed!");
+        }
     }
 
 }
