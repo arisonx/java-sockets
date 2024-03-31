@@ -10,13 +10,16 @@ public class GreetClient {
 
 
     public void StartConnection(String ip, int port) throws IOException {
-        clientSocket = new Socket(ip, port);
+        Socket clientSocket = new Socket(ip, port);
+        ThreadClient threadClient = new ThreadClient(clientSocket);
+        threadClient.start();
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
     }
 
-
     public String SendMessage(String msg) throws IOException {
+
         out.println(msg);
         String resp;
         resp = in.readLine();
