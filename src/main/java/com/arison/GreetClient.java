@@ -10,7 +10,7 @@ public class GreetClient {
 
 
     public void StartConnection(String ip, int port) throws IOException {
-        Socket clientSocket = new Socket(ip, port);
+        clientSocket = new Socket(ip, port);
         ThreadClient threadClient = new ThreadClient(clientSocket);
         threadClient.start();
         out = new PrintWriter(clientSocket.getOutputStream(), true);

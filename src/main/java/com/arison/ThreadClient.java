@@ -18,12 +18,13 @@ public class ThreadClient extends Thread {
 
     @Override
     public void run() {
+
         try {
             clientSocket.connect(clientSocket.getLocalSocketAddress());
-
         } catch (IOException e) {
-            System.out.println(STR."Socket connection error\{e}");
+
         }
+
 
     }
 

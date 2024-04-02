@@ -24,7 +24,6 @@ public class ThreadServer extends Thread {
             }
 
             while (true) {
-
                 // Socket Client
                 Socket clientSocket = serverSocket.accept(); // Accept connections
                 //Socket Writer
@@ -33,6 +32,7 @@ public class ThreadServer extends Thread {
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // socket input
                 String greeting = in.readLine(); // message read
                 System.out.println("Message Received: "+greeting);
+                out.println("você é foda negão");
             }
 
         } catch (IOException err) {
