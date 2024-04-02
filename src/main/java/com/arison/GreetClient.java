@@ -15,7 +15,6 @@ public class GreetClient {
         threadClient.start();
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
     }
 
     public String SendMessage(String msg) throws IOException {
@@ -23,7 +22,7 @@ public class GreetClient {
         out.println(msg);
         String resp;
         resp = in.readLine();
-        System.out.println(resp);
+        System.out.println("Server Response:   "+resp);
         return resp;
     }
 

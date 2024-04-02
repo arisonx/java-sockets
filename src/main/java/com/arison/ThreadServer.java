@@ -32,14 +32,7 @@ public class ThreadServer extends Thread {
                 //Socket Input
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // socket input
                 String greeting = in.readLine(); // message read
-
-
-                if ("Hello server".equals(greeting)) {
-                    out.println("hello client");
-                } else {
-                    out.println("unrecognised greeting");
-                }
-
+                System.out.println("Message Received: "+greeting);
             }
 
         } catch (IOException err) {

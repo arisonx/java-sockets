@@ -12,8 +12,6 @@ public class ThreadClient extends Thread {
 
     public Socket clientSocket;
 
-
-
     public ThreadClient(Socket socket) {
        this.clientSocket  =  socket;
     }
@@ -22,12 +20,6 @@ public class ThreadClient extends Thread {
     public void run() {
         try {
             clientSocket.connect(clientSocket.getLocalSocketAddress());
-
-            if (clientSocket.isBound()) {
-                System.out.println("Client connected on server");
-            }
-
-
 
         } catch (IOException e) {
             System.out.println(STR."Socket connection error\{e}");
