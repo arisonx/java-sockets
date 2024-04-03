@@ -19,13 +19,14 @@ public class ThreadServer extends Thread {
             ServerSocket serverSocket = new ServerSocket(port); // Server initialization
 
             if (serverSocket.isBound()) {
-                System.out.println("Server accept connections");
-                System.out.println("send messages with client");
+                System.out.println("waiting messages...");
             }
 
             while (true) {
                 // Socket Client
                 Socket clientSocket = serverSocket.accept(); // Accept connections
+//                System.out.println("Alguém conectou?" + clientSocket.isConnected());
+//                System.out.println("cliente desconectado?  " + clientSocket.isClosed());
                 //Socket Writer
                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); // socket output
                 //Socket Input
